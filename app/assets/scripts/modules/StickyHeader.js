@@ -5,7 +5,7 @@ import smoothScroll from 'jquery-smooth-scroll';
 class StickyHeader{
 	constructor(){
 		this.siteHeader = $('.site-header');
-		this.headerTriggerElement = $('.large-hero__title');
+		this.headerTrigger = $('.large-hero__title');
 		this.createHeaderWaypoint();
 		this.pageSections = $('.page-section');
 		this.headerLinks = $('.primary-nav a');
@@ -20,12 +20,12 @@ class StickyHeader{
 	createHeaderWaypoint(){
 		var that = this;
 		new Waypoint({
-			element: this.headerTriggerElement[0],
+			element: this.headerTrigger[0],
 			handler: function(direction){
 				if(direction == "down"){
-					that.siteHeader.addClass('site-header--dark');
+					that.siteHeader.addClass("site-header--dark");
 				}else{
-					that.siteHeader.removeClass('site-header--dark');
+					that.siteHeader.removeClass("site-header--dark");
 				}
 			}
 		});
@@ -38,25 +38,30 @@ class StickyHeader{
 			new Waypoint({
 				element: currentPageSection,
 				handler: function(direction){
-					if(direction == "down"){
-						var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
-						that.headerLinks.removeClass("is-current-link");
-						$(matchingHeaderLink).addClass("is-current-link");
+					if( direction == "down"){
+						var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
+						that.headerLinks.removeClass('is-current-link');
+						$(matchingHeaderLink).addClass('is-current-link');
+					}else{
+
 					}
 				},
-				offset: "18%"
+				offset: '18%'
 			});
+
 			new Waypoint({
 				element: currentPageSection,
 				handler: function(direction){
-					if(direction == "up"){
-						var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
-						that.headerLinks.removeClass("is-current-link");
-						$(matchingHeaderLink).addClass("is-current-link");
+					if( direction == "up"){
+						var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
+						that.headerLinks.removeClass('is-current-link');
+						$(matchingHeaderLink).addClass('is-current-link');
+					}else{
+						
 					}
 				},
-				offset: "-40%"
-			});
+				offset: '-41%'
+,			});
 		})
 	}
 }

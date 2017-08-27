@@ -11101,6 +11101,10 @@ var _RevealOnScroll = __webpack_require__(4);
 
 var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _StickyHeader = __webpack_require__(5);
 
 var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
@@ -11109,15 +11113,11 @@ var _Modal = __webpack_require__(7);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
-new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
-new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
+new _RevealOnScroll2.default((0, _jquery2.default)('.feature-item'), '90%');
+new _RevealOnScroll2.default((0, _jquery2.default)('.testimonial'), '60%');
 var stickyHeader = new _StickyHeader2.default();
 var modal = new _Modal2.default();
 
@@ -11146,9 +11146,9 @@ var MobileMenu = function () {
 	function MobileMenu() {
 		_classCallCheck(this, MobileMenu);
 
-		this.siteHeader = (0, _jquery2.default)('.site-header');
 		this.menuIcon = (0, _jquery2.default)('.site-header__menu-icon');
 		this.menuContent = (0, _jquery2.default)('.site-header__menu-content');
+		this.siteHeader = (0, _jquery2.default)('.site-header');
 		this.events();
 	}
 
@@ -11220,7 +11220,7 @@ var RevealOnScroll = function () {
 				new Waypoint({
 					element: currentItem,
 					handler: function handler() {
-						(0, _jquery2.default)(currentItem).addClass('reveal-item--is-visible');
+						(0, _jquery2.default)(currentItem).addClass("reveal-item--is-visible");
 					},
 					offset: that.offsetPercentage
 				});
@@ -11267,7 +11267,7 @@ var StickyHeader = function () {
 		_classCallCheck(this, StickyHeader);
 
 		this.siteHeader = (0, _jquery2.default)('.site-header');
-		this.headerTriggerElement = (0, _jquery2.default)('.large-hero__title');
+		this.headerTrigger = (0, _jquery2.default)('.large-hero__title');
 		this.createHeaderWaypoint();
 		this.pageSections = (0, _jquery2.default)('.page-section');
 		this.headerLinks = (0, _jquery2.default)('.primary-nav a');
@@ -11285,12 +11285,12 @@ var StickyHeader = function () {
 		value: function createHeaderWaypoint() {
 			var that = this;
 			new Waypoint({
-				element: this.headerTriggerElement[0],
+				element: this.headerTrigger[0],
 				handler: function handler(direction) {
 					if (direction == "down") {
-						that.siteHeader.addClass('site-header--dark');
+						that.siteHeader.addClass("site-header--dark");
 					} else {
-						that.siteHeader.removeClass('site-header--dark');
+						that.siteHeader.removeClass("site-header--dark");
 					}
 				}
 			});
@@ -11305,23 +11305,24 @@ var StickyHeader = function () {
 					element: currentPageSection,
 					handler: function handler(direction) {
 						if (direction == "down") {
-							var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
-							that.headerLinks.removeClass("is-current-link");
-							(0, _jquery2.default)(matchingHeaderLink).addClass("is-current-link");
-						}
+							var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
+							that.headerLinks.removeClass('is-current-link');
+							(0, _jquery2.default)(matchingHeaderLink).addClass('is-current-link');
+						} else {}
 					},
-					offset: "18%"
+					offset: '18%'
 				});
+
 				new Waypoint({
 					element: currentPageSection,
 					handler: function handler(direction) {
 						if (direction == "up") {
-							var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
-							that.headerLinks.removeClass("is-current-link");
-							(0, _jquery2.default)(matchingHeaderLink).addClass("is-current-link");
-						}
+							var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
+							that.headerLinks.removeClass('is-current-link');
+							(0, _jquery2.default)(matchingHeaderLink).addClass('is-current-link');
+						} else {}
 					},
-					offset: "-40%"
+					offset: '-41%'
 				});
 			});
 		}
@@ -11724,8 +11725,8 @@ var Modal = function () {
 	function Modal() {
 		_classCallCheck(this, Modal);
 
+		this.openModalButton = (0, _jquery2.default)('.open-modal');
 		this.modal = (0, _jquery2.default)('.modal');
-		this.openModalBtn = (0, _jquery2.default)('.open-modal');
 		this.closeModalButton = (0, _jquery2.default)('.modal__close');
 		this.events();
 	}
@@ -11733,14 +11734,23 @@ var Modal = function () {
 	_createClass(Modal, [{
 		key: 'events',
 		value: function events() {
-			//clicking the open modal button
-			this.openModalBtn.click(this.openModal.bind(this));
-
-			// clicking the x close modal button
+			// open modal click
+			this.openModalButton.click(this.openModal.bind(this));
+			// x close click
 			this.closeModalButton.click(this.closeModal.bind(this));
-
-			// pushes any key		
+			//escape key
 			(0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
+		}
+	}, {
+		key: 'openModal',
+		value: function openModal() {
+			this.modal.addClass('modal--is-visible');
+			return false;
+		}
+	}, {
+		key: 'closeModal',
+		value: function closeModal() {
+			this.modal.removeClass('modal--is-visible');
 		}
 	}, {
 		key: 'keyPressHandler',
@@ -11748,17 +11758,6 @@ var Modal = function () {
 			if (e.keyCode == 27) {
 				this.closeModal();
 			}
-		}
-	}, {
-		key: 'openModal',
-		value: function openModal() {
-			this.modal.addClass("modal--is-visible");
-			return false;
-		}
-	}, {
-		key: 'closeModal',
-		value: function closeModal() {
-			this.modal.removeClass("modal--is-visible");
 		}
 	}]);
 

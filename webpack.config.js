@@ -1,15 +1,15 @@
-const path = require('path');
+var path = require('path');
 
 module.exports = {
 	entry: {
-		app: "./app/assets/scripts/app.js",
-		vendor: "./app/assets/scripts/vendor.js"
+		App: "./app/assets/scripts/App.js",
+		Vendor: "./app/assets/scripts/Vendor.js"
 	},
 	output: {
-		path: path.resolve(__dirname, "./app/temp/scripts/"),
+		path: path.resolve(__dirname, "./app/temp/scripts"),
 		filename: "[name].js"
 	},
-	module: {
+	module:{
 		loaders: [
 			{
 				loader: 'babel-loader',
@@ -22,4 +22,3 @@ module.exports = {
 		]
 	}
 }
-
