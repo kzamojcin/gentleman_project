@@ -1,0 +1,28 @@
+.social-icons{
+	display: none;
+	@mixin atMedium{
+		display: block;
+		position: fixed;
+		top: 40%;
+		left: 0;	
+		z-index: 2;	
+
+		&--background{
+			position: relative;		
+			width: 30px;
+			height: 30px;		
+			margin-bottom: 6px;
+			background-color: $mainWhite;
+			box-shadow: 0 0 3px 0px black;
+		}
+		&__image{
+			position: relative;
+			display: block;
+			border-radius: 5px;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+}

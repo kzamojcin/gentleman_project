@@ -1,0 +1,45 @@
+.o-firmie{
+	position: relative;	
+	&__animation-container{
+		position: relative;
+	}
+	&__text{
+		position: absolute;
+		display: none;		
+		top: 0;
+		left: 50%;
+		padding-top: 11.75rem;
+		color: $mainWhite;
+		transform: translateX(-50%);
+		max-width: 500px;
+		min-width: 200px;
+		font-size: 0.625rem;		
+		letter-spacing: 1px;
+		line-height: 1.85;
+		font-family: 'Lato', sans-serif;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 400;
+
+		@mixin atMedium{
+			display: block;
+		}
+		@mixin atLarge{
+			padding-top: 16rem;
+		}
+		&--short{
+			display: block;
+			padding-top: 4.4rem;
+			font-size: 0.5rem;			
+			@mixin atSmall{
+				padding-top: 7rem;
+			}
+			@mixin atMedium{
+				display: none;
+			}
+		}
+	}
+	img{
+		display: block;
+	}
+}

@@ -40,4 +40,10 @@
 			padding-right: 18px;			
 		}
 	}
+	&--no-wrap-until-large{
+		padding: 0 0;
+		@mixin atLarge{
+			padding: 0 18px;
+		}
+	}
 }
