@@ -53,6 +53,12 @@
 		&__stores--p-bottom-at-large{
 			margin-bottom: 165px;
 		}
+		&__stores--mt-large{
+			margin-top: 2px;
+		}
+		&__stores--mb-large{
+			margin-bottom: 2px;
+		}
 	}
 
 	.flexbox &--equal-height-at-medium{
