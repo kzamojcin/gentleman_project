@@ -8,8 +8,8 @@
   <title>Gentleman - Moda Męska</title>
   <meta name="keywords" content="Garnitury, moda, moda męska">
   <meta name="description" content="Your clarify. One trip away. We create soul restoring journeys that inspire you to be you.">
-  <link rel="stylesheet" href="assets/styles/styles-ba37db1605.css"/>
-  <script src="assets/scripts/Vendor-e1e343afc7.js"></script>
+  <link rel="stylesheet" href="assets/styles/styles-c1b3bd9fc8.css"/>
+  <script src="assets/scripts/Vendor-e4d659404d.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -23,12 +23,13 @@
         <div class="site-header__menu-icon__middle"></div>        
       </div>
 
-      <div class="site-header__menu-content">
+      <div class="site-header__menu-content"><!-- 
         <div class="site-header__btn-container">
-          <a href="#" class="btn open-modal">Kontakt</a>
-        </div>
+          <a href="#get-in-touch" id="get-in-touch-link">Kontakt</a>
+        </div> -->
         <nav class="primary-nav">
           <ul>
+            <li><a href="#get-in-touch" id="get-in-touch-link">Kontakt</a></li>
             <li><a href="#testimonials" id="testimonials-link">Opinie</a></li>
             <li><a href="#stores" id="stores-link">Salony</a></li>
             <li><a href="#o-firmie" id="o-firmie-link">O Firmie</a></li>
@@ -40,11 +41,11 @@
   </header>
 
   <div class="large-hero">
-    <picture>    
-      <source srcset="assets/images/exportTest/jacket-original--large2.jpg 1098w" media="(min-width: 1380px)">
-      <source srcset="assets/images/exportTest/jacket-original--medium.jpg 824w" media="(min-width: 800px)">
-      <source srcset="assets/images/exportTest/jacket-original-vertical--small.jpg 599w" media="(min-width: 640px)">
-      <img class="large-hero__image large-hero__image--full-width" srcset="assets/images/exportTest/jacket-original-vertical--smaller.jpg 399w" alt="Coastal view of ocean & mountains">
+    <picture>
+      <source srcset="/assets/images/exportTest/jacket-original--large2.jpg 1098w" media="(min-width: 1380px)">
+      <source srcset="/assets/images/exportTest/jacket-original--medium.jpg 824w" media="(min-width: 800px)">
+      <source srcset="/assets/images/exportTest/jacket-original-vertical--small.jpg 599w" media="(min-width: 640px)">
+      <img class="large-hero__image large-hero__image--full-width" srcset="/assets/images/exportTest/jacket-original-vertical--smaller.jpg 399w" alt="Coastal view of ocean & mountains">
     </picture>
     
     <div class="large-hero__call-container">
@@ -68,24 +69,32 @@
   <div id="o-firmie" class="o-firmie page-section page-section__o-firmie " data-matching-link="#o-firmie-link">
     <div class="wrapper wrapper wrapper--no-wrap-until-large">
       <h2 class="headline headline--centered headline--uppercase">O Firmie</h2> 
+      
       <div class="o-firmie__animation-container">
         <div class="wrapper wrapper wrapper--narrow">
           <p class="o-firmie__text">Oferta w salonach Gentleman łączy w sobie elegancję z wygodą, indywidualizm z nowoczesnym wzornictwem oraz najlepsze tkaniny z perfekcyjnym wykonaniem. Niepowtarzalne limitowane kolekcje garniturów tworzone są z myslą o mężczyznach ceniących sobie prestiż, elegancję i wygodę.</p>
-          <p class="o-firmie__text o-firmie__text--short">Oferta w salonach Gentleman łączy w sobie elegancję z wygodą. Niepowtarzalne limitowane kolekcje garniturów.</p>
+          <p class="o-firmie__text o-firmie__text--short"><span>Niepowtarzalne limitowane kolekcje garniturów.</span> Oferta w salonach Gentleman łączy w sobie elegancję z wygodą.</p>
         </div>
-        <img class="lazyload page-section__o-firmie__animation" data-srcset="assets/images/animation_frame.jpg 2560w" alt="animation frame">
-      </div>     
+        <img class="lazyload o-firmie--visible-until-medium page-section__o-firmie__animation" data-srcset="assets/images/animation_frame.jpg 2560w" alt="animation frame">
+
+        <video id="video_frame" class="lazyload o-firmie--hidden-until-medium page-section__o-firmie__animation" poster="assets/video/video_frame.png" autoplay="true" loop muted>
+          <source src="assets/video/video_frame.webm" type="video/webm">
+          <source src="assets/video/video_frame.mp4" type="video/mp4">
+        </video>
+        <div class="o-firmie__video_frame--shadow"></div>
+      </div>
+          
     </div>
 
   </div>
 
   <div id="stores" class="page-section" data-matching-link="#stores-link">
     <h2 class="headline headline--centered headline--uppercase headline--black ">Salony</h2>
-    <div class="wrapper">     
+    <div class="wrapper">
 
       <div class="row row__stores--p-bottom-at-large">
         
-        <div class="row__large-6 generic-content-container stores__paragraph--visible-until-large">
+        <div class="row__large-6 generic-content-container stores__paragraph--visible-until-large revealOnScroll-85">
           <div class="stores__paragraph__container">
             <p class="stores__paragraph__city-name"><strong>stalowa wola</strong></p>
             <div class="stores__paragraph__description">
@@ -95,11 +104,11 @@
             </div>
           </div>
         </div>
-        <div class="row__large-6 row__relative">
+        <div class="row__large-6 row__relative revealOnScroll-85">
           <img class="stores__paragraph__image stores__paragraph__image--right" src="assets/images/store-stalowawola-web.jpg" alt="store1">          
           <div class="stores__paragraph__image--shadow"></div>
         </div>
-        <div class="row__large-6 generic-content-container stores__paragraph--hidden-until-large">
+        <div class="row__large-6 generic-content-container stores__paragraph--hidden-until-large revealOnScroll-85">
           <div class="stores__paragraph__container">
             <p class="stores__paragraph__city-name"><strong>stalowa wola</strong></p>
             <div class="stores__paragraph__description">
@@ -111,7 +120,7 @@
         </div>
       </div>  
       <div class="row">
-        <div class="row__large-6 generic-content-container">
+        <div class="row__large-6 generic-content-container revealOnScroll-85">
           <div class="stores__paragraph__container">
             <p class="stores__paragraph__city-name"><strong>tarnobrzeg</strong></p>
             <div class="stores__paragraph__description">
@@ -122,10 +131,10 @@
             </div>
           </div>        
         </div>
-        <div class="row__large-6 row__relative">
+        <div class="row__large-6 row__relative revealOnScroll-85">
           
 
-          <img class="stores__paragraph__image" src="assets/images/store-tarnobrzeg-web.jpg" alt="store2">
+          <img class="stores__paragraph__image" src="assets/images/store-tarnobrzeg-web2.jpg" alt="store2">
           
           <div class="stores__paragraph__image--shadow"></div>
         
@@ -140,7 +149,7 @@
     <div class="wrapper wrapper--no-padding-until-medium">      
       <h2 class="headline headline--centered headline--uppercase">Opinie</h2>
       <div class="row row--gutters row--equal-height-at-medium generic-content-container">
-        <div class="row__medium-4">
+        <div class="row__medium-4 revealOnScroll-85">
           <div class="testimonial">            
             <div class="testimonial__black">
               <div class="testimonial__content">
@@ -154,7 +163,7 @@
             </div>            
           </div>
         </div>
-        <div class="row__medium-4">
+        <div class="row__medium-4 revealOnScroll-85">
           <div class="testimonial">
             <div class="testimonial__black">
               <div class="testimonial__content">
@@ -168,7 +177,7 @@
             </div>
           </div>
         </div>
-        <div class="row__medium-4">
+        <div class="row__medium-4 revealOnScroll-85">
           <div class="testimonial testimonial--last">            
             <div class="testimonial__black">
               <div class="testimonial__content">
@@ -185,21 +194,27 @@
       </div>
     </div>
   </div>
-  <div id="get-in-touch" class="page-section page-section__get-in-touch generic-content-container">
+  <div id="get-in-touch" class="page-section page-section__get-in-touch generic-content-container" data-matching-link="#get-in-touch-link">
     <div class="wrapper wrapper--medium">
       <h2 class="headline headline--centered headline--uppercase headline--black">Kontakt</h2>
       <div class="row row--gutters row--gutters-small generic-content-container">
-        <div class="row__small-4">
-          <img class="get-in-touch__image get-in-touch__image--m-bottom get-in-touch--ico-shadow" src="assets/images/newIcons/fb.jpg" alt="ico">
+        <div class="row__small-4 revealOnScroll-85">
+          <a href="http://www.facebook.com">
+            <img class="get-in-touch__image get-in-touch__image--m-bottom get-in-touch--ico-shadow" src="assets/images/newIcons/fb.jpg" alt="ico">
+          </a>
         </div>
-        <div class="row__small-4">
-          <img class="get-in-touch__image get-in-touch__image--m-bottom get-in-touch--ico-shadow" src="assets/images/newIcons/instagram2.jpg" alt="ico">
+        <div class="row__small-4 revealOnScroll-85">
+          <a href="http://www.instagram.com">
+            <img class="get-in-touch__image get-in-touch__image--m-bottom get-in-touch--ico-shadow" src="assets/images/newIcons/instagram2.jpg" alt="ico">
+          </a>
         </div>
-        <div class="row__small-4">
-          <img class="get-in-touch__image get-in-touch__image--m-bottom get-in-touch--ico-shadow" src="assets/images/newIcons/googleplus.jpg" alt="ico">
+        <div class="row__small-4 revealOnScroll-85">
+          <a href="http://www.plus.google.com">
+            <img class="get-in-touch__image get-in-touch__image--m-bottom get-in-touch--ico-shadow" src="assets/images/newIcons/googleplus.jpg" alt="ico">
+          </a>
         </div>
       </div>
-      <div class="get-in-touch--contact-info">
+      <div class="get-in-touch--contact-info revealOnScroll-85">
         <p>T: 0048 333-333-333</p>
         <p>E: info@gentleman.pl</p>
       </div>
@@ -226,15 +241,21 @@
   </div>
   <div class="social-icons">
     <div class="social-icons--background">
-      <img class="social-icons__image" src="assets/images/newIcons/fb-mini.jpg" alt="icosmall">
+      <a href="http://www.facebook.com">
+        <img class="social-icons__image" src="assets/images/newIcons/fb-mini.jpg" alt="icosmall">
+      </a>
     </div>
     <div class="social-icons--background">
-      <img class="social-icons__image" src="assets/images/newIcons/instagram-mini.jpg" alt="icosmall">
+      <a href="http://www.instagram.com">
+        <img class="social-icons__image" src="assets/images/newIcons/instagram-mini.jpg" alt="icosmall">
+      </a>
     </div>
     <div class="social-icons--background">
-      <img class="social-icons__image" src="assets/images/newIcons/googleplus-mini.jpg" alt="icosmall">
+      <a href="http://www.plus.google.com">
+        <img class="social-icons__image" src="assets/images/newIcons/googleplus-mini.jpg" alt="icosmall">
+      </a>
     </div>
   </div>
-  <script src="assets/scripts/App-4055871386.js"></script>
+  <script src="assets/scripts/App-b4fdd6ebed.js"></script>
 </body>
 </html>
