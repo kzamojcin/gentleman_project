@@ -11113,13 +11113,18 @@ var _Modal = __webpack_require__(7);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
+var _VideoFrame = __webpack_require__(8);
+
+var _VideoFrame2 = _interopRequireDefault(_VideoFrame);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
-new _RevealOnScroll2.default((0, _jquery2.default)('.feature-item'), '90%');
-new _RevealOnScroll2.default((0, _jquery2.default)('.testimonial'), '60%');
+new _RevealOnScroll2.default((0, _jquery2.default)('.feature-item'), '60%');
+new _RevealOnScroll2.default((0, _jquery2.default)('.revealOnScroll-85'), '85%');
 var stickyHeader = new _StickyHeader2.default();
 var modal = new _Modal2.default();
+var videoFrame = new _VideoFrame2.default();
 
 /***/ }),
 /* 3 */
@@ -11765,6 +11770,41 @@ var Modal = function () {
 }();
 
 exports.default = Modal;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var VideoFrame = function () {
+	function VideoFrame() {
+		_classCallCheck(this, VideoFrame);
+
+		this.videoFrame = document.getElementById('video_frame');
+		this.VideoFrameSlowDown();
+	}
+
+	_createClass(VideoFrame, [{
+		key: 'VideoFrameSlowDown',
+		value: function VideoFrameSlowDown() {
+			this.videoFrame.playbackRate = 0.6;
+		}
+	}]);
+
+	return VideoFrame;
+}();
+
+exports.default = VideoFrame;
 
 /***/ })
 /******/ ]);

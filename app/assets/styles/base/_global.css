@@ -8,6 +8,10 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+video{
+	max-width: 100%;
+	height: auto;
+}
 *{	
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;

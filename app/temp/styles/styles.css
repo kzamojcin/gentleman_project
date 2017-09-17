@@ -462,6 +462,11 @@ img {
 	height: auto;
 }
 
+video{
+	max-width: 100%;
+	height: auto;
+}
+
 *{	
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1296,13 +1301,28 @@ Instead edit gulp/templates/sprite.css*/
 			display: table;
 		}
 
+.reveal-item{
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transform: scale(.8);
+	        transform: scale(.8);
+	-webkit-transition: all .7s ease-in-out;
+	transition: all .7s ease-in-out;
+}
+
+.reveal-item--is-visible{
+		visibility: initial;
+		-webkit-transform: scale(1);
+		        transform: scale(1);
+		opacity: 1;
+	}
+
 .modal{
 	display: none;
 }
 
 .social-icons{
 	display: none;
-
 }
 
 @media (min-width: 800px){
@@ -1313,26 +1333,37 @@ Instead edit gulp/templates/sprite.css*/
 		top: 40%;
 		left: 0;	
 		z-index: 2
-
 }	
 
 		.social-icons--background{
-			position: relative;		
+			position: relative;
 			width: 30px;
 			height: 30px;		
 			margin-bottom: 6px;
 			background-color: #f6f6f6;
 			-webkit-box-shadow: 0 0 3px 0px black;
 			        box-shadow: 0 0 3px 0px black;
+			-webkit-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
 		}
+
+			.social-icons--background:hover{
+				width: 50px;
+			}
+				.social-icons--background:hover .social-icons__image{
+					left: 65%;
+					-webkit-transform: translate(-50%, -50%) scale(1.2);
+					        transform: translate(-50%, -50%) scale(1.2);
+				}
 		.social-icons__image{
 			position: relative;
-			display: block;
 			border-radius: 5px;
 			left: 50%;
-			top: 50%;
-			-webkit-transform: translate(-50%, -50%);
-			        transform: translate(-50%, -50%);
+			top: 50%;			
+			-webkit-transform: translate(-50%, -50%);			
+			        transform: translate(-50%, -50%);			
+			-webkit-transition: all .3s ease-in-out;			
+			transition: all .3s ease-in-out;
 		}
 	}
 
@@ -1426,7 +1457,7 @@ Instead edit gulp/templates/sprite.css*/
 @media (min-width: 1010px){
 
 .o-firmie__text{
-			padding-top: 16rem
+			padding-top: 19rem
 	}
 	}
 
@@ -1450,8 +1481,36 @@ Instead edit gulp/templates/sprite.css*/
 		}
 	}
 
-.o-firmie img{
+.o-firmie__video_frame--shadow{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		-webkit-box-shadow: inset 0 0 10px 10px black;
+		        box-shadow: inset 0 0 10px 10px black;
+
+	}
+
+.o-firmie--visible-until-medium{
 		display: block;
+	}
+
+@media (min-width: 800px){
+
+.o-firmie--visible-until-medium{
+			display: none
+	}
+	}
+
+.o-firmie--hidden-until-medium{
+		display: none;
+	}
+
+@media (min-width: 800px){
+
+.o-firmie--hidden-until-medium{
+			display: block
+	}
 	}
 
 .stores__paragraph__container{
