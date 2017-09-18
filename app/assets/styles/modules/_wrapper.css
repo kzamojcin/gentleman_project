@@ -40,6 +40,12 @@
 			padding-right: 18px;			
 		}
 	}
+	&--no-wrap-until-medium{
+		padding: 0 0;
+		@mixin atMedium{
+			padding: 0 18px;
+		}
+	}
 	&--no-wrap-until-large{
 		padding: 0 0;
 		@mixin atLarge{

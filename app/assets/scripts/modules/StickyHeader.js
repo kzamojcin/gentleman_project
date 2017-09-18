@@ -4,9 +4,10 @@ import smoothScroll from 'jquery-smooth-scroll';
 
 class StickyHeader{
 	constructor(){
-		this.siteHeader = $('.site-header');
+		this.goTopArrow = $('.go-top-arrow');
+		this.goTop = $('#go-top-link');
 		this.headerTrigger = $('.large-hero__title');
-		this.createHeaderWaypoint();
+		this.createGoTopArrowWaypoint();
 		this.pageSections = $('.page-section');
 		this.headerLinks = $('.primary-nav a');
 		this.createPageSectionWaypoints();
@@ -15,17 +16,19 @@ class StickyHeader{
 
 	addSmoothScrolling(){
 		this.headerLinks.smoothScroll();
+		this.goTop.smoothScroll();
 	}
 
-	createHeaderWaypoint(){
+	createGoTopArrowWaypoint(){
 		var that = this;
 		new Waypoint({
+			// element: this.headerTrigger[0],
 			element: this.headerTrigger[0],
 			handler: function(direction){
 				if(direction == "down"){
-					that.siteHeader.addClass("site-header--dark");
+					that.goTopArrow.addClass("arrow--visible");
 				}else{
-					that.siteHeader.removeClass("site-header--dark");
+					that.goTopArrow.removeClass("arrow--visible");
 				}
 			}
 		});
