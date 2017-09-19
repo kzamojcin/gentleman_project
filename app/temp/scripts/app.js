@@ -11206,13 +11206,22 @@ var RevealOnScroll = function () {
 	function RevealOnScroll(els, offset) {
 		_classCallCheck(this, RevealOnScroll);
 
+		this.lazyImages = (0, _jquery2.default)(".lazyload");
 		this.itemsToReveal = els;
 		this.offsetPercentage = offset;
 		this.hideInitially();
 		this.createWaypoints();
+		this.refreshWaypoints();
 	}
 
 	_createClass(RevealOnScroll, [{
+		key: 'refreshWaypoints',
+		value: function refreshWaypoints() {
+			this.lazyImages.on('load', function () {
+				Waypoint.refreshAll();
+			});
+		}
+	}, {
 		key: 'hideInitially',
 		value: function hideInitially() {
 			this.itemsToReveal.addClass('reveal-item');

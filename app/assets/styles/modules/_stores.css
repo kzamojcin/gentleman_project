@@ -26,6 +26,7 @@
 	&__image{
 		position: relative;
 		display: block;	
+		width: 100%;
 
 		&--right{
 			margin-bottom: 70px;
