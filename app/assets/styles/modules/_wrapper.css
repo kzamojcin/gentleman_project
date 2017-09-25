@@ -40,8 +40,8 @@
 			padding-right: 18px;			
 		}
 	}
-	&--no-wrap-until-medium{
-		padding: 0 0;
+	&--no-sides-wrap-until-medium{
+		padding: 0 0 24px 0;
 		@mixin atMedium{
 			padding: 0 18px;
 		}

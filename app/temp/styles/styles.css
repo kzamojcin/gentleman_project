@@ -668,13 +668,13 @@ a{
 	}
 	}
 
-.wrapper--no-wrap-until-medium{
-		padding: 0 0;
+.wrapper--no-sides-wrap-until-medium{
+		padding: 0 0 24px 0;
 	}
 
 @media (min-width: 800px){
 
-.wrapper--no-wrap-until-medium{
+.wrapper--no-sides-wrap-until-medium{
 			padding: 0 18px
 	}
 	}
@@ -921,9 +921,9 @@ a{
 		margin-top: 0;
 		padding-top: 30px;
 		padding-bottom: 200px;
-		font-size: 0.778rem;
-		font-family: 'Dancing Script', cursive;
-		font-variant: small-caps;
+		font-family: 'Ubuntu Mono', monospace;
+		font-size: 0.878rem;
+		font-weight: 300;
 		letter-spacing: 1px;
 		line-height: 1.9;
 		text-align: left;
@@ -936,9 +936,9 @@ a{
 		left: 30px;
 		bottom: 32px;
 		text-align: left;
-		font-size: 0.808rem;
+		font-family: 'Ubuntu Mono', monospace;
+		font-size: 1rem;
 		font-weight: 300;
-		text-transform: uppercase;
 	}
 
 @media (min-width: 800px){
@@ -1026,83 +1026,49 @@ a{
 Instead edit gulp/templates/sprite.css*/
 
 .icon{
-			background-image: url('/assets/images/sprites/sprite-e79e95cc.svg');
+			background-image: url('/assets/images/sprites/sprite-cf4726a9.svg');
+			display: inline-block;
+			margin: 0 auto;
 		}
 
 .no-svg .icon{
-			background-image: url('/assets/images/sprites/sprite-e79e95cc.png');
+			background-image: url('/assets/images/sprites/sprite-cf4726a9.png');			
 		}
 
-.icon--clear-view-escapes {
-		width: 144.4px;
-		height: 61.53px;		
-		background-position: 0 0;
+.icon--facebook {		
+		width: 190px;
+		height: 62px;		
+		background-position: 0 0;		
 	}
 
-.icon--comment {
-		width: 66px;
-		height: 66px;		
-		background-position: 99.71014492753623% 0;
+.icon--facebook-mini {		
+		width: 25px;
+		height: 25px;		
+		background-position: 100% 15.590062111801242%;		
 	}
 
-.icon--facebook {
-		width: 23.23px;
-		height: 44.01px;		
-		background-position: 26.424310365536293% 45.92133741323979%;
+.icon--googleplus {		
+		width: 190px;
+		height: 62px;		
+		background-position: 0 50%;		
 	}
 
-.icon--fire {
-		width: 58px;
-		height: 66px;		
-		background-position: 0 99.58035714285714%;
+.icon--googleplus-mini {		
+		width: 25px;
+		height: 24.2px;		
+		background-position: 100% 30.964153275648947%;		
 	}
 
-.icon--globe {
-		width: 66px;
-		height: 66px;		
-		background-position: 28.019323671497585% 99.58035714285714%;
+.icon--instagram {		
+		width: 190px;
+		height: 62px;		
+		background-position: 0 100%;		
 	}
 
-.icon--instagram {
-		width: 44.01px;
-		height: 44.01px;		
-		background-position: 63.059522249879905% 49.25740726919919%;
-	}
-
-.icon--mail {
-		width: 66px;
-		height: 50px;		
-		background-position: 0 48.0703125%;
-	}
-
-.icon--rain {
-		width: 66px;
-		height: 66px;		
-		background-position: 99.71014492753623% 58.92857142857143%;
-	}
-
-.icon--star {
-		width: 66px;
-		height: 66px;		
-		background-position: 59.90338164251208% 99.58035714285714%;
-	}
-
-.icon--twitter {
-		width: 53.78px;
-		height: 44.06px;		
-		background-position: 94.15199343125627% 98.55159026429745%;
-	}
-
-.icon--wifi {
-		width: 62px;
-		height: 66px;		
-		background-position: 68.43601895734596% 0;
-	}
-
-.icon--youtube {
-		width: 36.75px;
-		height: 44px;		
-		background-position: 37.76931216931217% 45.917910447761194%;
+.icon--instagram-mini {		
+		width: 25px;
+		height: 25.1px;		
+		background-position: 100% 0;		
 	}
 
 .site-footer__text{
@@ -1137,11 +1103,13 @@ Instead edit gulp/templates/sprite.css*/
 .site-header__menu-content{	
 		position: relative;	
 		visibility: hidden;
+		height: 35px;
 		opacity: 0;
 		z-index: -1;
-		top: -80px;
+		/*top: 80px;*/
+		top: 50px;
 		text-align: center;
-		background-color: black;
+		/*background-color: black;*/
 		-webkit-transition: all .3s ease-in-out;
 		transition: all .3s ease-in-out;
 	}
@@ -1149,7 +1117,7 @@ Instead edit gulp/templates/sprite.css*/
 @media (min-width: 530px){
 
 .site-header__menu-content{
-			top: -40px
+			top: 60px
 	}
 	}
 
@@ -1157,10 +1125,20 @@ Instead edit gulp/templates/sprite.css*/
 			visibility: visible;
 			opacity: 1;
 			z-index: 0;
-			top: 0;
+			height: 169px;
+			/*top: 80px;*/
+			top: 69px;
 			background-color: black;
 			text-align: center;
 		}
+
+@media (min-width: 530px){
+
+.site-header__menu-content--is-visible{
+				height: 90px;
+				top: 60px
+		}
+	}
 
 @media (min-width: 800px){
 
@@ -1175,6 +1153,18 @@ Instead edit gulp/templates/sprite.css*/
 			z-index: 0;
 			background-color: transparent
 	}
+	}
+
+.site-header__menu-content ul{			
+			padding: 15px 0 60px 0;
+		}
+
+@media (min-width: 530px){
+
+.site-header__menu-content ul{
+				padding-top: 15px;
+				padding-bottom: 60px
+		}
 	}
 
 .site-header__menu-icon{
@@ -1262,23 +1252,28 @@ Instead edit gulp/templates/sprite.css*/
 
 .site-header__logo{
 		position: relative;
+		text-align: center;
+		-webkit-transform: scale(.9);
+		        transform: scale(.9);
+		top: 5px;
+		
 	}
 
 @media (min-width: 800px){
 
-.site-header__logo{
-			position: absolute;
-			left: auto;
+.site-header__logo{			
 			float: left;		
-			color: white;
-			-webkit-transform: translateX(0) scale(1);
-			        transform: translateX(0) scale(1)
+			color: white
+		
 	}
+			.site-header__logo div{				
+				left: auto;
+				-webkit-transform: translateX(0);
+				        transform: translateX(0);
+				width: auto;
+				top: -5px;
+			}
 	}
-
-.site-header__logo img{
-			height: 66px;
-		}
 
 .site-header__logo::after{
 			content: "";
@@ -1287,28 +1282,30 @@ Instead edit gulp/templates/sprite.css*/
 		}
 
 .site-header__logo__text{
-			position: absolute;
-			top: 20px;
-			color: white;
+			position: absolute;	
+			text-indent: -9999px;		
 			left: 50%;
 			-webkit-transform: translateX(-50%);
 			        transform: translateX(-50%);
 		}
 
 .site-header__logo__graphic{
-			position: relative;
+			position: absolute;			
 			left: 50%;
-			-webkit-transform: translateX(-50%) scale(0.85);
-			        transform: translateX(-50%) scale(0.85);
-			z-index: 1;
+			-webkit-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			width: 75%;
 		}
+
+.site-header__logo__graphic img{
+				position: relative;
+				height: 66px;
+			}
 
 @media (min-width: 800px){
 
 .site-header__logo__graphic{
-				left: 0;
-				-webkit-transform: translateX(0);
-				        transform: translateX(0)
+				position: relative
 		}
 	}
 
@@ -1349,7 +1346,7 @@ Instead edit gulp/templates/sprite.css*/
 	}
 
 .primary-nav ul{		
-		padding: 10px 0;
+		/*padding: 10px 0;*/
 		margin: 0;
 		margin-top: -4px;
 	}
@@ -1377,7 +1374,7 @@ Instead edit gulp/templates/sprite.css*/
 }
 
 .reveal-item--is-visible{
-		visibility: initial;
+		visibility: visible;
 		-webkit-transform: scale(1);
 		        transform: scale(1);
 		opacity: 1;
@@ -1398,7 +1395,7 @@ Instead edit gulp/templates/sprite.css*/
 		position: fixed;
 		top: 40%;
 		left: 0;	
-		z-index: 2
+		z-index: 3
 }	
 
 		.social-icons--background{
@@ -1433,39 +1430,41 @@ Instead edit gulp/templates/sprite.css*/
 		}
 	}
 
-.get-in-touch--ico-shadow{
-		-webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.35);
-		        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.35);
-	}
-
-.get-in-touch__image{
-		width: 131px;
+.get-in-touch--icon-responsivness{
+		-webkit-transform: scale(0.7);
+		        transform: scale(0.7);
 	}
 
 @media (min-width: 530px){
 
-.get-in-touch__image{
-			width: 75%
+.get-in-touch--icon-responsivness{
+			-webkit-transform: scale(0.7);
+			        transform: scale(0.7)
 	}
 	}
 
 @media (min-width: 800px){
 
-.get-in-touch__image{
-			width: 188px;
-			height: 60px
+.get-in-touch--icon-responsivness{
+			-webkit-transform: scale(1);
+			        transform: scale(1)
 	}
 	}
 
-.get-in-touch__image--m-bottom{
-			margin-bottom: 20px;
-		}
+.get-in-touch--icon-shadow{
+		-webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.35);
+		        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.35);		
+	}
+
+.get-in-touch--icon-m-bottom{
+		margin-bottom: 15px;
+	}
 
 @media (min-width: 530px){
 
-.get-in-touch__image--m-bottom{
-				margin-bottom: 0
-		}
+.get-in-touch--icon-m-bottom{
+			margin-bottom: 0
+	}
 	}
 
 .get-in-touch--contact-info{

@@ -12,23 +12,30 @@
 	&__menu-content{	
 		position: relative;	
 		visibility: hidden;
+		height: 35px;
 		opacity: 0;
 		z-index: -1;
-		top: -80px;
+		/*top: 80px;*/
+		top: 50px;
 		text-align: center;
-		background-color: black;
-		transition: all .3s ease-in-out;		
+		/*background-color: black;*/
+		transition: all .3s ease-in-out;
 		@mixin atSmall{
-			top: -40px;
+			top: 60px;
 		}
-		
 		&--is-visible{
 			visibility: visible;
 			opacity: 1;
 			z-index: 0;
-			top: 0;
+			height: 169px;
+			/*top: 80px;*/
+			top: 69px;
 			background-color: black;
 			text-align: center;
+			@mixin atSmall{
+				height: 90px;
+				top: 60px;
+			}
 		}
 		@mixin atMedium{
 			visibility: visible;
@@ -39,6 +46,13 @@
 			transition: none;
 			z-index: 0;
 			background-color: transparent;
+		}
+		ul{			
+			padding: 15px 0 60px 0;
+			@mixin atSmall{
+				padding-top: 15px;
+				padding-bottom: 60px;
+			}
 		}
 	}	
 	&__menu-icon{
@@ -106,15 +120,18 @@
 	}
 	&__logo{
 		position: relative;
-		@mixin atMedium{
-			position: absolute;
-			left: auto;
+		text-align: center;
+		transform: scale(.9);
+		top: 5px;
+		@mixin atMedium{			
 			float: left;		
 			color: white;
-			transform: translateX(0) scale(1);
-		}
-		img{
-			height: 66px;
+			& div{				
+				left: auto;
+				transform: translateX(0);
+				width: auto;
+				top: -5px;
+			}
 		}
 		&::after{
 			content: "";
@@ -122,21 +139,24 @@
 			display: table;
 		}
 		&__text{
-			position: absolute;
-			top: 20px;
-			color: white;
+			position: absolute;	
+			text-indent: -9999px;		
 			left: 50%;
 			transform: translateX(-50%);
 		}
 		&__graphic{
-			position: relative;
+			position: absolute;			
 			left: 50%;
-			transform: translateX(-50%) scale(0.85);
-			z-index: 1;
+			transform: translateX(-50%);
+			width: 75%;
+			img{
+				position: relative;
+				height: 66px;
+			}
 			@mixin atMedium{
-				left: 0;
-				transform: translateX(0);
+				position: relative;
 			}
 		}
+		
 	}
 }

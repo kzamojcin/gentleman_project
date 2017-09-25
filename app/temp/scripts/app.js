@@ -11167,7 +11167,6 @@ var MobileMenu = function () {
 		key: 'toggleTheMenu',
 		value: function toggleTheMenu() {
 			this.menuContent.toggleClass('site-header__menu-content--is-visible');
-			this.siteHeader.toggleClass('site-header--is-expanded');
 			this.menuIcon.toggleClass('site-header__menu-icon--close-x');
 		}
 	}]);
@@ -11282,11 +11281,14 @@ var StickyHeader = function () {
 		_classCallCheck(this, StickyHeader);
 
 		this.goTopArrow = (0, _jquery2.default)('.go-top-arrow');
+		this.siteHeader = (0, _jquery2.default)('.site-header__menu-content');
+		this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
 		this.goTop = (0, _jquery2.default)('#go-top-link');
 		this.headerTrigger = (0, _jquery2.default)('.large-hero__title');
-		this.createGoTopArrowWaypoint();
 		this.pageSections = (0, _jquery2.default)('.page-section');
 		this.headerLinks = (0, _jquery2.default)('.primary-nav a');
+		this.createGoTopArrowWaypoint();
+		this.createHideMobileMenuOutOfSight();
 		this.createPageSectionWaypoints();
 		this.addSmoothScrolling();
 	}
@@ -11302,13 +11304,26 @@ var StickyHeader = function () {
 		value: function createGoTopArrowWaypoint() {
 			var that = this;
 			new Waypoint({
-				// element: this.headerTrigger[0],
 				element: this.headerTrigger[0],
 				handler: function handler(direction) {
 					if (direction == "down") {
 						that.goTopArrow.addClass("arrow--visible");
 					} else {
 						that.goTopArrow.removeClass("arrow--visible");
+					}
+				}
+			});
+		}
+	}, {
+		key: 'createHideMobileMenuOutOfSight',
+		value: function createHideMobileMenuOutOfSight() {
+			var that = this;
+			new Waypoint({
+				element: this.headerTrigger[0],
+				handler: function handler(direction) {
+					if (direction == "down") {
+						that.menuIcon.removeClass("site-header__menu-icon--close-x");
+						that.siteHeader.removeClass("site-header__menu-content--is-visible");
 					}
 				}
 			});
@@ -11804,12 +11819,12 @@ var VideoFrame = function () {
 		_classCallCheck(this, VideoFrame);
 
 		this.videoFrame = document.getElementById('video_frame');
-		this.VideoFrameSlowDown();
+		this.VideoFrameRateSlowDown();
 	}
 
 	_createClass(VideoFrame, [{
-		key: 'VideoFrameSlowDown',
-		value: function VideoFrameSlowDown() {
+		key: 'VideoFrameRateSlowDown',
+		value: function VideoFrameRateSlowDown() {
 			this.videoFrame.playbackRate = 0.6;
 		}
 	}]);

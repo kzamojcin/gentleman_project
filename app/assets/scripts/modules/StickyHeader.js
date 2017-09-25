@@ -5,11 +5,14 @@ import smoothScroll from 'jquery-smooth-scroll';
 class StickyHeader{
 	constructor(){
 		this.goTopArrow = $('.go-top-arrow');
+		this.siteHeader = $('.site-header__menu-content');
+		this.menuIcon = $(".site-header__menu-icon");
 		this.goTop = $('#go-top-link');
 		this.headerTrigger = $('.large-hero__title');
-		this.createGoTopArrowWaypoint();
 		this.pageSections = $('.page-section');
 		this.headerLinks = $('.primary-nav a');
+		this.createGoTopArrowWaypoint();
+		this.createHideMobileMenuOutOfSight();
 		this.createPageSectionWaypoints();
 		this.addSmoothScrolling();		
 	}
@@ -21,7 +24,6 @@ class StickyHeader{
 	createGoTopArrowWaypoint(){
 		var that = this;
 		new Waypoint({
-			// element: this.headerTrigger[0],
 			element: this.headerTrigger[0],
 			handler: function(direction){
 				if(direction == "down"){
@@ -32,7 +34,18 @@ class StickyHeader{
 			}
 		});
 	}
-
+	createHideMobileMenuOutOfSight(){
+		var that = this;
+		new Waypoint({
+			element: this.headerTrigger[0],
+			handler: function(direction){
+				if(direction == "down"){
+					that.menuIcon.removeClass("site-header__menu-icon--close-x");
+					that.siteHeader.removeClass("site-header__menu-content--is-visible");
+				}
+			}
+		});
+	}
 	createPageSectionWaypoints(){
 		var that = this;
 		this.pageSections.each(function(){
