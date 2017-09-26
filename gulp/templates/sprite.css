@@ -3,6 +3,7 @@ Instead edit gulp/templates/sprite.css*/
 
 {{#shapes}}
 	{{#first}}
+		/*Web*/
 		.icon{
 			background-image: url('../../assets/images/sprites/{{{sprite}}}');
 			display: inline-block;
@@ -11,6 +12,15 @@ Instead edit gulp/templates/sprite.css*/
 		.no-svg .icon{
 			background-image: url('../../assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');			
 		}
+		/*Local*/
+		/*.icon{
+			background-image: url('/assets/images/sprites/{{{sprite}}}');
+			display: inline-block;
+			margin: 0 auto;
+		}
+		.no-svg .icon{
+			background-image: url('/assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');			
+		}*/
 	{{/first}}
 
 	.icon--{{base}} {		
