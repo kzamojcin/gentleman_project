@@ -18,7 +18,7 @@
 		}
 	}
 
-	&--contact-info{
+	&__contact-info{
 		padding-top: 70px;
 		font-size: 1rem;
 		letter-spacing: 2px;
@@ -30,5 +30,10 @@
 		@mixin atMedium{
 			font-size: 1.275rem;
 		}
+	}
+	&--phone-number{
+		color: #333;
+		font-size: 1rem;
+		text-transform: none;
 	}
 }

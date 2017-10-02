@@ -1091,6 +1091,7 @@ Instead edit gulp/templates/sprite.css*/
 	}
 
 .site-footer__text{
+		position: relative;
 		font-family: 'Lato', sans-serif;
 		font-size: 0.9rem;
 		padding: 30px 0;
@@ -1105,6 +1106,11 @@ Instead edit gulp/templates/sprite.css*/
 			padding: 40px 0
 	}
 	}
+
+.site-footer__text__span-right{
+			position: absolute;
+			right: 0;
+		}
 
 .site-header{	
 	width: 100%;	
@@ -1486,7 +1492,7 @@ Instead edit gulp/templates/sprite.css*/
 	}
 	}
 
-.get-in-touch--contact-info{
+.get-in-touch__contact-info{
 		padding-top: 70px;
 		font-size: 1rem;
 		letter-spacing: 2px;
@@ -1499,9 +1505,15 @@ Instead edit gulp/templates/sprite.css*/
 
 @media (min-width: 800px){
 
-.get-in-touch--contact-info{
+.get-in-touch__contact-info{
 			font-size: 1.275rem
 	}
+	}
+
+.get-in-touch--phone-number{
+		color: #333;
+		font-size: 1rem;
+		text-transform: none;
 	}
 
 .o-firmie{
@@ -1690,6 +1702,10 @@ Instead edit gulp/templates/sprite.css*/
 .stores__paragraph--hidden-until-large{
 			display: block
 	}
+	}
+
+.stores__paragraph__phone-number{
+		color: #333;
 	}
 
 .go-top-arrow{

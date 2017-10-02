@@ -61,4 +61,7 @@
 			display: block;
 		}
 	}
+	&__phone-number{
+		color: #333;
+	}
 }
